@@ -1,5 +1,8 @@
-const { Entity, Column, PrimaryGeneratedColumn, ManyToOne } = require('typeorm')
+import { ManyToOne } from 'typeorm'
 import { User } from './User'
+
+
+const { Entity, Column, PrimaryGeneratedColumn } = require('typeorm')
 
 @Entity()
 export class Genre {
@@ -9,6 +12,13 @@ export class Genre {
     @Column()
     genreId: number
 
-    @ManyToOne(() => User, (user:any) => user.genres)
+    @Column()
+    name: string
+
+    @Column({ default: false })
+    select: boolean = false
+
+    @ManyToOne(() => User, user => user.genres)
     user: User
+
 }

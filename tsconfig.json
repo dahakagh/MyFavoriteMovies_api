@@ -1,33 +1,17 @@
 {
-   "compilerOptions": {
+  "compilerOptions": {
      "lib": [
-       "es5",
-       "es6"
+        "es5",
+        "es6",
+        "esnext.asynciterable"
      ],
-     "baseUrl": "./",
-     "emitDecoratorMetadata": true,
-     "esModuleInterop": true,
-     "experimentalDecorators": true,
-     "strictPropertyInitialization": false,
-     "importHelpers": true,
+     "target": "es5",
      "module": "commonjs",
-     "outDir": "dist",
-     "removeComments": true,
-     "sourceMap": true,
-     "strict": true,
-     "target": "es6",
      "moduleResolution": "node",
-     "types": [
-       "node"
-     ],
-     "typeRoots": [
-       "node_modules/@types"
-     ]
-   },
-   "include": [
-     "src/**/*.ts"
-   ],
-   "exclude": [
-     "src/public/"
-   ]
+     "outDir": "./build",
+     "rootDir": "./src",
+     "emitDecoratorMetadata": true,
+     "experimentalDecorators": true,
+     "sourceMap": true
   }
+}

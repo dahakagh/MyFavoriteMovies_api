@@ -10,12 +10,12 @@ export class User {
     @Column({ unique: true })
     login: string
 
-    @Column()
-    password: string
+    @Column({ length: 20 })
+    password!: string
 
-    @OneToMany(() => Genre, (genre:any) => genre.user)
+    @OneToMany(() => Genre, (genre) => genre.user)
     genres: Genre[]
 
-    @OneToMany(() => Movie, (movie:any) => movie.user)
+    @OneToMany(() => Movie, (movie) => movie.user)
     movies: Movie[]
 }

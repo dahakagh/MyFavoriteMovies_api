@@ -6,10 +6,6 @@ var logger = require('morgan');
 require('dotenv').config()
 require('reflect-metadata')
 
-var genresRouter = require('./routes/genres');
-var moviesRouter = require('./routes/movies');
-
-createConnection()
 
 var app = express();
 
@@ -28,8 +24,9 @@ app.use(function (req, res, next) {
   next()
 })
 
-app.use('/genres', genresRouter)
-app.use('/movies', moviesRouter)
+app.use(function (req, res, next) {
+  next(createError(404))
+})
 
 // error handler
 app.use(function(err, req, res, next) {

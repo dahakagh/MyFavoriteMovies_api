@@ -9,6 +9,9 @@ export class Movie {
     @Column()
     movieId: number
 
-    @ManyToOne(() => User, (user:any) => user.movies)
+    @ManyToOne(() => User, user => user.movies)
     user: User
+
+    @Column({default: false})
+    watched: boolean
 }
