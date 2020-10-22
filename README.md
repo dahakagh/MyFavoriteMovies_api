@@ -1,1 +1,1 @@
-# MyFavoriteMovies_api
+# Backend for MyFavoriteMovies_frontend.
