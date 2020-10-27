@@ -8,12 +8,14 @@ const typeDefs = gql`
         poster_path: String
         release_data: String
         watched: Boolean
-        with_genres: [ID!]
+        genre_ids: ID!
     }
 
     type Query {
+        getGenres: [Genre]
         getMovies: [Movie]
-        getPopulars: [Movie]
+        getSearchResult: [Movie]
+        getPopular: [Movie]
         getNowPlaying: [Movie]
         getTopRated: [Movie]
         getUpcoming: [Movie]

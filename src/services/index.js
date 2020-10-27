@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import { search_url, nowPlaying_url, popular_url, topRated_url, upcoming_url, genre_url, configs_url } from './api';
+import { search_url, nowPlaying_url, popular_url, topRated_url, upcoming_url, configs_url } from './api';
 import { movie } from './utils';
 
 const getConfigs = () =>
@@ -7,18 +7,6 @@ const getConfigs = () =>
       .then(res => res.json())
       .then(configs => configs.images)
 
-const getGenres = (parent) => {
-    return fetch(`${genre_url}`)
-      .then(res => res.json())
-      .then(data => {
-          const genres = {
-              type: 'genres',
-              genres: genre(parent, data)
-          };
-  
-          return genres
-      })
-  }
 
 const getNowPlaying = (parent, page) => {
   return fetch(`${nowPlaying_url}&page=${page}`)

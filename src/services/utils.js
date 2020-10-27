@@ -51,4 +51,4 @@ const getMovies = parent => {
     return movies;
 };
 
-export { movie, getMovies, getGenres }
+export { movie,genre, getMovies, getGenres }

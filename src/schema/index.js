@@ -2,6 +2,7 @@ const { gql } = require('apollo-server-express')
 const Genre = require('./Genre')
 const Movie = require('./Movie')
 const User = require('./User')
+const autorization = require('./authorization')
 
 const linkSchema = gql`
   type Query {
@@ -13,5 +14,5 @@ const linkSchema = gql`
   }
 `
 
-module.exports = [linkSchema, Genre, Movie, User]
+module.exports = [linkSchema, Genre, Movie, User, autorization]
 
