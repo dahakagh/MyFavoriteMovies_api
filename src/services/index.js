@@ -80,22 +80,6 @@ const getNowPlaying = (parent, page) => {
     });
 };
 
-const getPopular = (parent, page) => {
-  return fetch(`${popular_url}&page=${page}`)
-    .then((res) => res.json())
-    .then((data) => {
-      const results = {
-        type: "popular",
-        page: data.page,
-        total: data.total_results,
-        total_pages: data.total_pages,
-        date: data.dates,
-        results: movie(parent, data),
-      };
-
-      return results;
-    });
-};
 
 const getTopRated = (parent, page) => {
   return fetch(`${topRated_url}&page=${page}`)
