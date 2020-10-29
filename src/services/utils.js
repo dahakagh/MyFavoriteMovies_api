@@ -17,8 +17,8 @@ const movie = (parent, data) => {
 };
 
 const getGenres = parent => {
-    const genreList = [];
-    const data = parent.genres.genreList;
+    const genres = [];
+    const data = parent.genres.genres;
 
     data.forEach(genre => {
         const genres = {

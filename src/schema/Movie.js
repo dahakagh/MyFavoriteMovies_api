@@ -13,10 +13,8 @@ const typeDefs = gql`
 
     type Query {
         getMovies: [Movie]
-        getPopulars: [Movie]
-        getNowPlaying: [Movie]
-        getTopRated: [Movie]
-        getUpcoming: [Movie]
+        getSearchResult: [Movie]
+        getMoviesByFilters: [Movie]
     }
 
     type Mutation {
