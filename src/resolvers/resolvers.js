@@ -1,4 +1,4 @@
-import { getConfigs, getNowPlaying, getPopular, getSearchResult, getTopRated, getUpcoming } from '../services/index'
+import { getConfigs, getSearchResult } from '../services/index'
 import { getMovies, getGenres } from '../services/utils'
 
 const resolvers = {
@@ -6,11 +6,13 @@ const resolvers = {
         configs: () => getConfigs()
     },
     Configs: {
-        nowPlaying: (parent, {page}) => getNowPlaying(parent, page),
-        movieSearch: (parent, {keyword}) => getSearchResult(parent, keyword),
+        movieByFilters: (parent, {filters}) => getMoviesByFilters(parent, filters),
+        movieSearch: (parent, {keyword}) => getSearchResult(parent, keyword)
+        /*
         moviePopular: (parent, {page}) => getPopular(parent, page),
         movieTopRated: (parent, {page}) => getTopRated(parent, page),
         movieUpcoming: (parent, {page}) => getUpcoming(parent, page)
+        */
     },
     Results: {
         genres: parent => getGenres(parent),

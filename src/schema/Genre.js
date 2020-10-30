@@ -12,6 +12,10 @@ const typeDefs = gql`
         name: String
         select: Boolean
     }
+
+    type Query {
+      getGenres: [Genre]
+    }
 `;
 
 module.exports = typeDefs
