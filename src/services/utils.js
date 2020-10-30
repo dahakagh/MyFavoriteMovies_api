@@ -17,13 +17,8 @@ const movie = (parent, data) => {
 };
 
 const getGenres = parent => {
-<<<<<<< HEAD
     const genres = [];
     const data = parent.genres.genres;
-=======
-    const genreList = [];
-    const data = parent.genres.genreList;
->>>>>>> 7823c59035f731d064cf27149b460d638cacf504
 
     data.forEach(genre => {
         const genres = {
@@ -56,8 +51,4 @@ const getMovies = parent => {
     return movies;
 };
 
-<<<<<<< HEAD
-export { movie, getMovies, getGenres }
-=======
-export { movie,genre, getMovies, getGenres }
->>>>>>> 7823c59035f731d064cf27149b460d638cacf504
+export { movie, getMovies, getGenres, genre }
